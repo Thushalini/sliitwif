@@ -1,4 +1,7 @@
+"use client";
+
 import { Eye, Target, Compass } from "lucide-react";
+import { motion } from "framer-motion";
 
 const pillars = [
   {
@@ -35,9 +38,13 @@ export default function AboutUsPage() {
 
         <div className="space-y-20">
           {pillars.map((pillar) => (
-            <article
+            <motion.article
               key={pillar.title}
               className="relative pl-0 sm:pl-[220px]"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.4 }}
             >
               <span className="absolute left-[40px] top-1/2 hidden h-[4px] w-[190px] -translate-y-1/2 rounded-full bg-[#914FA8] sm:block" />
 
@@ -60,7 +67,7 @@ export default function AboutUsPage() {
                   </div>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </section>
