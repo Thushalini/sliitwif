@@ -1,20 +1,23 @@
-import { Lightbulb } from "lucide-react";
+import { Eye, Target, Compass } from "lucide-react";
 
 const pillars = [
   {
     title: "Vision",
+    icon: Eye,
     description:
-      "Our strategic approach focuses on community building, education, and mentorship to create sustainable impact in the open source ecosystem.",
+      "Women In FOSS is an all girls society with its members being female students from the Faculty of Computing of SLIIT. The society provides a supportive environment to help girls grow as professionals in the field of IT with attention to Free/Open-Source Software.",
   },
   {
     title: "Mission",
+    icon: Target,
     description:
-      "Our strategic approach focuses on community building, education, and mentorship to create sustainable impact in the open source ecosystem.",
+      "The purpose of the SLIIT Women In FOSS Community is to empower the potential and the contribution of women towards Free/Open-Source Software by providing opportunities and encouraging women to actively engage in Free/Open-Source Software development.",
   },
   {
     title: "Strategy",
+    icon: Compass,
     description:
-      "Our strategic approach focuses on community building, education, and mentorship to create sustainable impact in the open source ecosystem.",
+      "Infrastructural and consulting support for FOSS-related initiatives and groups in Sri Lanka. And to help women in the field of tech to develop their personalities.",
   },
 ];
 
@@ -41,9 +44,11 @@ export default function AboutUsPage() {
               <div className="relative rounded-[40px] bg-gradient-to-br from-white via-[#FEF5FB] to-[#FDEFFC] px-20 py-14 shadow-[-14px_9px_76px_0px_#5F5D60]">
 
                 <div className="flex flex-col gap-10 text-left sm:flex-row sm:items-center">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#914FA8] text-white">
-                    <Lightbulb className="h-7 w-7" />
-                  </span>
+                  <div className="shrink-0">
+                    <span className="flex h-20 w-20 items-center justify-center rounded-2xl bg-[#914FA8] text-white">
+                        <pillar.icon className="h-8 w-8" />
+                    </span>
+                </div>
 
                   <div>
                     <h2 className="text-3xl font-semibold text-black">
