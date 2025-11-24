@@ -26,7 +26,7 @@ const pillars = [
 
 export default function AboutUsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="about-top" className="min-h-screen bg-white">
       <div className="w-full bg-[#E0D9FB] py-16 text-center shadow-inner">
         <h1 className="text-5xl font-bold text-[#914FA8]">About Us</h1>
       </div>
