@@ -36,7 +36,7 @@ export default function AboutUsPage() {
         <span className="absolute left-[75px] top-8 hidden h-10 w-10 rounded-full bg-[#914FA8] sm:block" />
         <span className="absolute left-[75px] bottom-8 hidden h-10 w-10 rounded-full bg-[#914FA8] sm:block" />
 
-        <div className="space-y-20">
+        <div className="space-y-24">
           {pillars.map((pillar) => (
             <motion.article
               key={pillar.title}
