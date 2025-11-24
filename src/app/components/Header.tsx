@@ -1,43 +1,103 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Active link: wide horizontal, less rounded corners
+  // Navigation links with proper labels
+  const links = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    { path: "/events", label: "Events" },
+    { path: "/blog", label: "Blog" },
+    { path: "/code-of-conduct", label: "Code of Conduct" },
+    { path: "/contact", label: "Contact Us" },
+  ];
+
+  // Active link styling
   const linkClasses = (path: string) =>
     pathname === path
-      ? "px-8 py-2 rounded-xl font-semibold text-white bg-[#914FA8] transition-colors"
+      ? "px-8 py-2 rounded-lg font-semibold text-white bg-[#914FA8] transition-all"
       : "px-6 py-2 font-semibold text-gray-800 hover:text-purple-600 transition-colors";
 
   return (
     <header className="bg-gray-100 border-b-4 border-gray-400">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="container mx-auto px-6 py-4"
+      >
+        <div className="flex items-center justify-between">
 
-        {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-4">
-          <Image
-            src="/sliitwif/assets/logo.png"
-            alt="SLIIT WIF Logo"
-            width={100}
-            height={100}
-          />
-        </Link>
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              <Image
+                src="/sliitwif/assets/logo.png"
+                alt="SLIIT WIF Logo"
+                width={110}
+                height={110}
+                className="object-contain"
+              />
+            </motion.div>
+          </Link>
 
-        {/* Navigation Links */}
-        <nav className="flex items-center gap-8">
-          <Link href="/" className={linkClasses("/")}>Home</Link>
-          <Link href="/about" className={linkClasses("/about")}>About Us</Link>
-          <Link href="/events" className={linkClasses("/events")}>Events</Link>
-          <Link href="/blog" className={linkClasses("/blog")}>Blog</Link>
-          <Link href="/code-of-conduct" className={linkClasses("/code-of-conduct")}>Code of Conduct</Link>
-          <Link href="/contact" className={linkClasses("/contact")}>Contact Us</Link>
-        </nav>
-      </div>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {links.map((link, index) => (
+              <motion.div
+                key={link.path}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 + index * 0.1 }}
+              >
+                <Link href={link.path} className={linkClasses(link.path)}>
+                  {link.label}
+                </Link>
+              </motion.div>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-3xl font-bold"
+          >
+            ☰
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:hidden bg-white shadow-lg p-6 mt-4 flex flex-col gap-4 rounded-lg"
+          >
+            {links.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={linkClasses(link.path)}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </motion.div>
     </header>
   );
 }
