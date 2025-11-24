@@ -38,7 +38,8 @@ export default function AboutUsPage() {
             >
               <span className="absolute left-[40px] top-1/2 hidden h-[4px] w-[190px] -translate-y-1/2 rounded-full bg-[#914FA8] sm:block" />
 
-              <div className="relative rounded-[40px] bg-gradient-to-br from-white via-[#FEF5FB] to-[#FDEFFC] px-20 py-14 shadow-[0_35px_60px_rgba(90,57,108,0.2)]">
+              <div className="relative rounded-[40px] bg-gradient-to-br from-white via-[#FEF5FB] to-[#FDEFFC] px-20 py-14 shadow-[-14px_9px_76px_0px_#5F5D60]">
+
                 <div className="flex flex-col gap-10 text-left sm:flex-row sm:items-center">
                   <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#914FA8] text-white">
                     <Lightbulb className="h-7 w-7" />
