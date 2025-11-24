@@ -13,7 +13,7 @@ export default function Header() {
   // Navigation links with proper labels
   const links = [
     { path: "/", label: "Home" },
-    { path: "/about", label: "About Us" },
+    { path: "/about-us", label: "About Us" },
     { path: "/events", label: "Events" },
     { path: "/blog", label: "Blog" },
     { path: "/code-of-conduct", label: "Code of Conduct" },
