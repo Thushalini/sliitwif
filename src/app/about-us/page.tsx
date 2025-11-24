@@ -26,7 +26,7 @@ const pillars = [
 
 export default function AboutUsPage() {
   return (
-    <main id="about-top" className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
       <div className="w-full bg-[#E0D9FB] py-16 text-center shadow-inner">
         <h1 className="text-5xl font-bold text-[#914FA8]">About Us</h1>
       </div>
@@ -48,7 +48,9 @@ export default function AboutUsPage() {
             >
               <span className="absolute left-[40px] top-1/2 hidden h-[4px] w-[190px] -translate-y-1/2 rounded-full bg-[#914FA8] sm:block" />
 
-              <div className="relative rounded-[40px] bg-gradient-to-br from-white via-[#FEF5FB] to-[#FDEFFC] px-20 py-14 shadow-[-14px_9px_76px_0px_#5F5D60]">
+              <div
+                className="relative rounded-[40px] border-2 border-transparent bg-gradient-to-br from-white via-[#FEF5FB] to-[#FDEFFC] px-20 py-14 shadow-[-14px_9px_76px_0px_#5F5D60] transition-[border-color,box-shadow] duration-300 ease-out hover:border-[#914FA8] hover:shadow-[0px_32px_90px_rgba(145,79,168,0.45)] focus-within:border-[#914FA8] focus-within:shadow-[0px_32px_90px_rgba(145,79,168,0.5)] active:border-[#914FA8] active:shadow-[0px_32px_90px_rgba(145,79,168,0.55)]"
+              >
 
                 <div className="flex flex-col gap-10 text-left sm:flex-row sm:items-center">
                   <div className="shrink-0">
