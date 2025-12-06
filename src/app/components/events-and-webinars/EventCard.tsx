@@ -31,7 +31,7 @@ export default function EventCard({ event, isWebinar = false }: EventCardProps) 
             <p className="text-gray-600 text-sm mb-4 line-clamp-3">{event.description}</p>
           )}
         </div>
-        
+        {!isWebinar && (
         <div className='bg-brand-100 rounded-md px-3 py-2'>
           {!isWebinar && 'speaker' in event && event.speaker && (
             <div className="text-gray-600 text-sm mb-1 flex items-center gap-2 transition-all duration-300 group-hover:translate-x-2 break-words whitespace-normal">
@@ -45,9 +45,10 @@ export default function EventCard({ event, isWebinar = false }: EventCardProps) 
             </div>
           )}
         </div>
+        )}
         
         {isWebinar && (
-          <button className="w-full py-2 bg-brand text-white rounded transition-all duration-300 group-hover:bg-brand-700 group-hover:shadow-lg group-hover:scale-105 mt-auto">
+          <button className="w-1/2 py-2 bg-brand text-white rounded transition-all duration-300 group-hover:bg-brand-700 group-hover:shadow-lg group-hover:scale-105 mt-auto self-end">
             View
           </button>
         )}
