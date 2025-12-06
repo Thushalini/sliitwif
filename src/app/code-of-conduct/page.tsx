@@ -27,8 +27,8 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
  but it can also lead to communication issues and unhappiness. To that end, we have a few ground 
  rules that we ask people to adhere to, to ensure that the SLIIT Women In FOSS community continues 
  to be an excellent space in which like-minded individuals are able to communicate, collaborate, and
-  contribute. This isn't an exhaustive list of things that you can't do. Rather, take it in the spirit 
-  in which it's intended - a guide to make it easier to be excellent to one another. 
+  contribute. This isn&apos;t an exhaustive list of things that you can&apos;t do. Rather, take it in the spirit 
+  in which it&apos;s intended - a guide to make it easier to be excellent to one another. 
   We expect it to be followed in spirit as much as in the letter. If you believe someone
    is violating the Code of Conduct, we ask that you report it by emailing <a href="mailto:infowifsliit@gmail.com" className="text-purple-600 hover:underline">infowifsliit@gmail.com</a>.
             </p>
@@ -52,7 +52,7 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
             <li className="flex items-start gap-3">
               <span className="font-bold text-gray-800 mt-1">•</span>
               <div>
-                <span className="font-bold text-gray-800">Be patient</span> - That'll helps you build empathy towards others.
+                <span className="font-bold text-gray-800">Be patient</span> - That&apos;ll helps you build empathy towards others.
               </div>
             </li>
             <li className="flex items-start gap-3">
@@ -81,7 +81,7 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
             <li className="flex items-start gap-3">
               <span className="font-bold text-gray-800 mt-1">•</span>
               <div>
-                <span className="font-bold text-gray-800">Get for help when unsure</span> -Don't be afraid to ask for help from your peers.
+                <span className="font-bold text-gray-800">Get for help when unsure</span> -Don&apos;t be afraid to ask for help from your peers.
 
               </div>
             </li>
@@ -102,7 +102,7 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
             </li>
             <li className="flex items-start gap-3">
               <span className="font-bold text-gray-800 mt-1">•</span>
-              <span>Posting (or threatening to post) other people's personally identifiable information on social media or somewhere.</span>
+              <span>Posting (or threatening to post) other people&apos;s personally identifiable information on social media or somewhere.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-bold text-gray-800 mt-1">•</span>
@@ -136,7 +136,7 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What happens after you file a report?</h2>
           <p className="text-gray-700 leading-relaxed">
-          You will receive an email from us immediately. We promise to take action within 24 hours. (We'll try to be quicker than that)
+          You will receive an email from us immediately. We promise to take action within 24 hours. (We&apos;ll try to be quicker than that)
           </p>
         </section>
 
@@ -145,10 +145,10 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Consequences of Bad Behavior</h2>
           <p className="text-gray-700 mb-4 leading-relaxed">
           After gathering and processing sufficient information,
-           we'll take appropriate action. Respond to a Code of Conduct violation will be as follows:
+           we&apos;ll take appropriate action. Respond to a Code of Conduct violation will be as follows:
           </p>
           <ul className="space-y-2 text-gray-700 ml-4">
-            <li className="list-disc">We'll give the person in question a public or private warning and explain how their behavior negatively impacted others.</li>
+            <li className="list-disc">We&apos;ll give the person in question a public or private warning and explain how their behavior negatively impacted others.</li>
             <li className="list-disc">Suspend the person enforced through a temporary ban on participating in any aspect of future community activities.</li>
             <li className="list-disc">Permanently ban the person from the SLIIT Women In FOSS Community.</li>
           </ul>
