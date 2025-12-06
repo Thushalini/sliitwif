@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable react/no-unescaped-entities */
 export default function CodeOfConductPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -30,7 +29,7 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
  to be an excellent space in which like-minded individuals are able to communicate, collaborate, and
   contribute. This isn't an exhaustive list of things that you can't do. Rather, take it in the spirit 
   in which it's intended - a guide to make it easier to be excellent to one another. 
-  We expect it to be followed in spirit as much as in the letter. If you believe someone
+  We expect it to be followed in spirit as much as in the letter. If you believe someone
    is violating the Code of Conduct, we ask that you report it by emailing <a href="mailto:infowifsliit@gmail.com" className="text-purple-600 hover:underline">infowifsliit@gmail.com</a>.
             </p>
           </div>
@@ -149,9 +148,9 @@ and have a good time! The SLIIT Women In FOSS Community Code of Conduct covers
            we'll take appropriate action. Respond to a Code of Conduct violation will be as follows:
           </p>
           <ul className="space-y-2 text-gray-700 ml-4">
-            <li className="list-disc">We'll give the person in question a public or private warning and explain how their behavior negatively impacted others.</li>
-            <li className="list-disc">Suspend the person enforced through a temporary ban on participating in any aspect of future community activities.</li>
-            <li className="list-disc">Permanently ban the person from the SLIIT Women In FOSS Community.</li>
+            <li className="list-disc">We'll give the person in question a public or private warning and explain how their behavior negatively impacted others.</li>
+            <li className="list-disc">Suspend the person enforced through a temporary ban on participating in any aspect of future community activities.</li>
+            <li className="list-disc">Permanently ban the person from the SLIIT Women In FOSS Community.</li>
           </ul>
         </section>
       </div>
