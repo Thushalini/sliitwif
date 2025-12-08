@@ -12,6 +12,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Brand color variable */
+  --color-brand: #914FA8;
 }
 
 /* Dark mode */
