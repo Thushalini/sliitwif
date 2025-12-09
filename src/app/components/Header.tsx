@@ -3,47 +3,19 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-
-interface NavLink {
-  path: string;
-  label: string;
-  scrollToSection?: string;
-}
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  const handleScrollNavigation = (e: React.MouseEvent, sectionId: string) => {
-    e.preventDefault();
-    setMenuOpen(false);
-
-    if (pathname === "/") {
-      scrollToSection(sectionId);
-    } else {
-      router.push(`/#${sectionId}`);
-      setTimeout(() => {
-        scrollToSection(sectionId);
-      }, 100);
-    }
-  };
-
   // Navigation links with proper labels
-  const links: NavLink[] = [
+  const links = [
     { path: "/", label: "Home" },
     { path: "/about-us", label: "About Us" },
-    { path: "/#events-section", label: "Events", scrollToSection: "events-section" },
-    { path: "/#blog-section", label: "Blog", scrollToSection: "blog-section" },
+    { path: "/events", label: "Events" },
+    { path: "/blog", label: "Blog" },
     { path: "/code-of-conduct", label: "Code of Conduct" },
     { path: "/contact", label: "Contact Us" },
   ];
@@ -90,18 +62,9 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 + index * 0.1 }}
               >
-                {link.scrollToSection ? (
-                  <button
-                    onClick={(e) => handleScrollNavigation(e, link.scrollToSection!)}
-                    className={linkClasses(link.path)}
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link href={link.path} className={linkClasses(link.path)}>
-                    {link.label}
-                  </Link>
-                )}
+                <Link href={link.path} className={linkClasses(link.path)}>
+                  {link.label}
+                </Link>
               </motion.div>
             ))}
           </nav>
