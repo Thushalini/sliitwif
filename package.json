@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build && next export",
-    "export": "next export -o out",
-    "start": "next start",
-    "lint": "eslint",
-    "deploy": "next build && next export -o out && gh-pages -d out"
-  },
+  "dev": "next dev --turbopack",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint",
+  "deploy": "next build && gh-pages -d out"
+},
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.23.24",
