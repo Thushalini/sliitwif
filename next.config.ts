@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   basePath: dynamicBasePath,
-  assetPrefix: `${dynamicBasePath}/`,
+  assetPrefix: dynamicBasePath
 };
 
 export default nextConfig;
