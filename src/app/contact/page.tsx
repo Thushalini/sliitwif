@@ -11,9 +11,7 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value
@@ -25,7 +23,6 @@ export default function ContactPage() {
       alert('Please fill in all fields');
       return;
     }
-
     console.log('Form submitted:', formData);
     alert('Message sent successfully!');
     setFormData({ name: '', email: '', message: '' });
@@ -33,7 +30,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-100 to-white">
-
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-purple-300 to-purple-200 py-16">
         <h1 className="text-5xl font-bold text-center text-purple-700">
@@ -51,9 +47,8 @@ export default function ContactPage() {
       {/* Contact Cards */}
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
           {/* Address Card */}
-          <div className="bg-purple-50 border-2 border-purple-400 rounded-2xl p-8 text-center shadow-sm">
+          <div className="bg-purple-50 border-2 border-purple-400 rounded-2xl p-8 text-center">
             <div className="flex justify-center mb-4">
               <MapPin className="w-12 h-12 text-purple-600" />
             </div>
@@ -64,7 +59,7 @@ export default function ContactPage() {
           </div>
 
           {/* Call Us Card */}
-          <div className="bg-purple-50 border-2 border-purple-400 rounded-2xl p-8 text-center shadow-sm">
+          <div className="bg-purple-50 border-2 border-purple-400 rounded-2xl p-8 text-center">
             <div className="flex justify-center mb-4">
               <Phone className="w-12 h-12 text-purple-600" />
             </div>
@@ -75,7 +70,7 @@ export default function ContactPage() {
           </div>
 
           {/* Email Card */}
-          <div className="bg-purple-50 border-2 border-purple-400 rounded-2xl p-8 text-center shadow-sm">
+          <div className="bg-purple-50 border-2 border-purple-400 rounded-2xl p-8 text-center">
             <div className="flex justify-center mb-4">
               <Mail className="w-12 h-12 text-purple-600" />
             </div>
@@ -84,14 +79,12 @@ export default function ContactPage() {
             </h3>
             <p className="text-purple-600 text-lg">infowifsliit@gmail.com</p>
           </div>
-
         </div>
       </div>
 
-      {/* Form Section */}
+      {/* Form Section with Avatar */}
       <div className="max-w-6xl mx-auto px-4 py-12 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Avatar Image */}
           <div className="flex justify-center">
             <Image
@@ -106,45 +99,46 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="space-y-6">
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Name"
-              className="w-full px-6 py-4 bg-purple-50 border-2 border-purple-300 rounded-xl text-purple-900 placeholder-purple-400 
-              focus:outline-none focus:border-purple-600"
-            />
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                className="w-full px-6 py-4 bg-purple-50 border-2 border-purple-300 rounded-xl text-purple-900 placeholder-purple-400 focus:outline-none focus:border-purple-500"
+              />
+            </div>
 
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email"
-              className="w-full px-6 py-4 bg-purple-50 border-2 border-purple-300 rounded-xl text-purple-900 placeholder-purple-400 
-              focus:outline-none focus:border-purple-600"
-            />
+            <div>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="w-full px-6 py-4 bg-purple-50 border-2 border-purple-300 rounded-xl text-purple-900 placeholder-purple-400 focus:outline-none focus:border-purple-500"
+              />
+            </div>
 
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Message"
-              rows={4}
-              className="w-full px-6 py-4 bg-purple-50 border-2 border-purple-300 rounded-xl text-purple-900 placeholder-purple-400 
-              focus:outline-none focus:border-purple-600 resize-none"
-            />
+            <div>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Message"
+                rows={4}
+                className="w-full px-6 py-4 bg-purple-50 border-2 border-purple-300 rounded-xl text-purple-900 placeholder-purple-400 focus:outline-none focus:border-purple-500 resize-none"
+              />
+            </div>
 
             <button
               onClick={handleSubmit}
-              className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-xl 
-              transition-colors duration-200 cursor-pointer"
+              className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer"
             >
               Send Message
             </button>
           </div>
-
         </div>
       </div>
     </div>
