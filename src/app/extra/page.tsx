@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Image from 'next/image';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -16,7 +17,7 @@ export default function WomenInFOSS() {
   const lowerTextRef = useRef(null);
   const gridRef = useRef(null);
   const magSectionRef = useRef(null);
-  const mascotImgRef = useRef(null);
+  const mascotImgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -111,7 +112,7 @@ export default function WomenInFOSS() {
               </div>
               <div className="lg:col-span-4 reveal-item">
                 <p className="text-lg text-purple-200/60 leading-relaxed border-l-2 border-purple-500 pl-6 italic">
-                  "Inspiring and diversifying the future of Free Open Source Software at SLIIT."
+                  &quot;Inspiring and diversifying the future of Free Open Source Software at SLIIT.&quot;
                 </p>
               </div>
             </div>
@@ -161,7 +162,7 @@ export default function WomenInFOSS() {
             </div>
             <div className="lg:col-span-4 lg:col-start-9 mag-reveal pt-4">
               <p className="text-lg leading-relaxed text-purple-100/60 font-light mb-8">
-                We’re not just a society; we’re a <span className="text-white font-medium italic underline decoration-purple-500 underline-offset-4">technical movement</span>. By dismantling barriers and fostering high-level contributions, we redefine tech leadership.
+                We&apos;re not just a society; we&apos;re a <span className="text-white font-medium italic underline decoration-purple-500 underline-offset-4">technical movement</span>. By dismantling barriers and fostering high-level contributions, we redefine tech leadership.
               </p>
               <div className="flex items-center gap-4">
                 <div className="h-12 w-[2px] bg-purple-500"></div>
@@ -194,7 +195,7 @@ export default function WomenInFOSS() {
           <div className="flex animate-marquee font-bold text-xl md:text-2xl uppercase tracking-[0.2em] text-purple-400/80">
             {[...Array(10)].map((_, i) => (
               <span key={i} className="mx-12">
-                SLIIT WOMEN IN FOSS <span className="mx-4 text-white/20">//</span> REDEFINING THE FUTURE <span className="mx-4 text-white/20">//</span>
+                SLIIT WOMEN IN FOSS <span className="mx-4 text-white/20">{"//"}</span> REDEFINING THE FUTURE <span className="mx-4 text-white/20">{"//"}</span>
               </span>
             ))}
           </div>
@@ -210,10 +211,12 @@ export default function WomenInFOSS() {
               <div className="relative aspect-square max-w-md mx-auto lg:mx-0 reveal-item">
                 <div className="absolute inset-0 bg-purple-500/20 blur-[80px] rounded-full scale-75 group-hover:scale-110 transition-transform duration-700" />
                 <div className="relative w-full h-full flex items-center justify-center">
-                  <img 
+                  <Image 
                     ref={mascotImgRef}
                     src="/sliitwif/images/mascot-nifi.png" 
                     alt="Nifi Mascot" 
+                    width={500}
+                    height={500}
                     className="w-full h-full object-contain relative z-20 drop-shadow-[0_0_30px_rgba(168,85,247,0.4)]"
                   />
                 </div>
@@ -245,7 +248,7 @@ export default function WomenInFOSS() {
 
       {/* FINAL SPACER */}
       <section className="h-[20vh] bg-[#0f0720] flex items-center justify-center border-t border-white/5">
-         <p className="text-white/10 font-mono text-[10px] tracking-[2em] uppercase">Faculty of Computing</p>
+          <p className="text-white/10 font-mono text-[10px] tracking-[2em] uppercase">Faculty of Computing</p>
       </section>
 
       <style jsx>{`
