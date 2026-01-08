@@ -10,7 +10,7 @@ interface Blog {
   author?: string;
   pubDate?: string;
   link?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 const Blog: React.FC = () => {
@@ -162,11 +162,11 @@ const Blog: React.FC = () => {
 
       {/* Blog Grid */}
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(310px,1fr))] gap-8 px-10">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(310px,360px))] justify-center gap-8 px-10">
           {filteredBlogs.map((blog, index) => (
             <article
               key={index}
-              className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-purple-300"
+              className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-[#f4e7ff] hover:shadow-purple-300"
             >
               <img
                 src={extractImage(blog.description)}
