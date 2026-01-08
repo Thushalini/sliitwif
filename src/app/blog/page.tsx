@@ -3,6 +3,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Config from "../utilities/config";
+import Image from "next/image";
+
+const DEFAULT_IMAGE = "/sliitwif/images/default-blog.png";
 
 interface Blog {
   title?: string;
@@ -20,6 +23,8 @@ const Blog: React.FC = () => {
   const [search, setSearch] = useState("");
   const [liked, setLiked] = useState<string[]>([]);
   const [showLikedOnly, setShowLikedOnly] = useState(false);
+
+
 
   /* ---------------- Fetch Blogs ---------------- */
   useEffect(() => {
@@ -51,11 +56,24 @@ const Blog: React.FC = () => {
   };
 
   const extractImage = (html?: string): string => {
-    if (!html) return "/default-blog.jpg";
+    if (!html) return DEFAULT_IMAGE;
     const div = document.createElement("div");
     div.innerHTML = html;
-    const img = div.querySelector("img") as HTMLImageElement | null;
-    return img?.src ?? "/default-blog.jpg";
+
+    // get all images
+    const imgs = Array.from(div.querySelectorAll("img")) as HTMLImageElement[];
+
+    // find first valid image
+    const validImg = imgs.find(img => {
+      const src = img.getAttribute("src") || img.getAttribute("data-src") || "";
+      // ignore tracker images
+      return src && !src.includes("/_/stat?event=");
+    });
+
+    if (!validImg) return DEFAULT_IMAGE;
+
+    // get actual src
+    return validImg.getAttribute("src") || validImg.getAttribute("data-src") || DEFAULT_IMAGE;
   };
 
   const getReadTime = (text: string) =>
@@ -168,12 +186,15 @@ const Blog: React.FC = () => {
               key={index}
               className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-[#f4e7ff] hover:shadow-purple-300"
             >
-              <img
-                src={extractImage(blog.description)}
-                alt={blog.title ?? "Blog image"}
-                loading="lazy"
-                className="w-full h-[180px] object-cover transition-transform duration-300 group-hover:scale-105"
-              />
+              <div className="relative w-full h-[180px] overflow-hidden rounded-xl">
+                <Image
+                  src={extractImage(blog.description)}
+                  alt={blog.title ?? "Blog image"}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
 
               <div className="p-5">
                 <div className="flex justify-between items-start mb-2">
